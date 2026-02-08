@@ -245,7 +245,7 @@ def strategy_1(simulator, operator_id):
     def _pull_once_with_result():
         nonlocal pool_pull_count, urgent_used
         if simulator.limited_permits > 0: simulator.limited_permits -= 1
-        elif simulator.current_permits > 0: simulator.current_permits -= 1
+        elif simulator.current_permits >= 1: simulator.current_permits -= 1
         else: return None 
         res = simulator.headhunt(operator_id)
         if res > 0: simulator.collection[res] += 1
@@ -272,7 +272,7 @@ def strategy_3(simulator, operator_id):
     def _pull_once_with_result():
         nonlocal pool_pull_count, urgent_used
         if simulator.limited_permits > 0: simulator.limited_permits -= 1
-        elif simulator.current_permits > 0: simulator.current_permits -= 1
+        elif simulator.current_permits >= 1: simulator.current_permits -= 1
         else: return None 
         res = simulator.headhunt(operator_id)
         if res > 0: simulator.collection[res] += 1
@@ -308,7 +308,7 @@ def strategy_3_1(simulator, operator_id):
     def _pull_once_with_result():
         nonlocal pool_pull_count, urgent_used
         if simulator.limited_permits > 0: simulator.limited_permits -= 1
-        elif simulator.current_permits > 0: simulator.current_permits -= 1
+        elif simulator.current_permits >= 1: simulator.current_permits -= 1
         else: return None 
         res = simulator.headhunt(operator_id)
         if res > 0: simulator.collection[res] += 1
@@ -336,7 +336,7 @@ def strategy_4(simulator, operator_id):
     def _pull_once_with_result():
         nonlocal pool_pull_count, urgent_used
         if simulator.limited_permits > 0: simulator.limited_permits -= 1
-        elif simulator.current_permits > 0: simulator.current_permits -= 1
+        elif simulator.current_permits >= 1: simulator.current_permits -= 1
         else: return None 
         res = simulator.headhunt(operator_id)
         if res > 0: simulator.collection[res] += 1
